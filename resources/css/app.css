@@ -3,7 +3,77 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+@font-face {
+    font-family: 'PT Root';
+    src: url('../fonts/pt-root-ui_light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Root';
+    src: url('../fonts/pt-root-ui_regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Root';
+    src: url('../fonts/pt-root-ui_medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Root';
+    src: url('../fonts/pt-root-ui_bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --color-background: #ebe9e6;
+    --color-ink: #1f1e1d;
+    --font-sans: 'PT Root', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --background-color: #ebe9e6;
+    --text-color: #1f1e1d;
+}
+
+@layer base {
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: var(--font-sans);
+    }
+
+    select option:checked {
+        background-color: var(--text-color) !important;
+        color: #ffffff !important;
+    }
+
+    select option:not(:checked):hover {
+        background-color: var(--background-color) !important;
+        color: var(--text-color) !important;
+    }
+
+    select option:checked:hover {
+        background-color: var(--text-color) !important;
+        color: #ffffff !important;
+    }
+
+    select {
+        accent-color: var(--text-color);
+    }
+
+    select option {
+        text-align: center;
+    }
 }

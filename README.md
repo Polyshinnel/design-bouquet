@@ -57,6 +57,7 @@ docker compose up -d
 После запуска:
 
 - приложение: <http://localhost:8099>;
+- панель управления Filament: <http://localhost:8099/admin>;
 - Vite dev server: <http://localhost:5175>.
 
 Порт приложения можно изменить через `APP_PORT`, порт Vite — через `VITE_PORT`.
@@ -69,6 +70,49 @@ docker compose logs -f app
 ```
 
 `Ctrl+C` остановит просмотр логов, но не контейнеры.
+
+## Панель управления Filament
+
+В проекте используется Filament `5.9.0`. Панель доступна по адресу `/admin` и работает через стандартную авторизацию Laravel.
+
+### Первый вход
+
+После запуска контейнеров создайте пользователя панели командой:
+
+```bash
+docker compose exec app php artisan make:filament-user
+```
+
+Команда запросит имя, email и пароль. После этого откройте <http://localhost:8099/admin> и войдите с созданными данными.
+
+### Основные команды Filament
+
+```bash
+# Показать установленные пакеты Filament
+docker compose exec app php artisan filament:about
+
+# Создать ресурс для управления моделью
+docker compose exec app php artisan make:filament-resource ModelName
+
+# Создать страницу панели
+docker compose exec app php artisan make:filament-page PageName
+
+# Оптимизировать компоненты и иконки
+docker compose exec app php artisan filament:optimize
+
+# Очистить кэш компонентов Filament
+docker compose exec app php artisan filament:optimize-clear
+```
+
+Провайдер панели находится в `app/Providers/Filament/AdminPanelProvider.php`. Ресурсы, страницы и виджеты размещаются соответственно в `app/Filament/Resources`, `app/Filament/Pages` и `app/Filament/Widgets` и автоматически обнаруживаются панелью.
+
+После изменения PHP-кода или конфигурации при необходимости очистите кэши:
+
+```bash
+docker compose exec app php artisan optimize:clear
+```
+
+Опубликованные ассеты Filament добавлены в `.gitignore` и генерируются автоматически при сборке образа.
 
 ## Основные команды
 
