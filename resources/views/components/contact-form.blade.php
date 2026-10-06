@@ -6,8 +6,8 @@
 
 <section class="grid grid-cols-1 md:grid-cols-[1.2fr_1.2fr_1fr_1fr_0.6fr] md:gap-0" aria-label="Форма обратной связи">
     <div class="md:col-span-2 md:pr-[20px]">
-        <h2 class="text-[50px] font-medium uppercase leading-[1.05]">{{ $title }}</h2>
-        <p class="mt-[35px] whitespace-pre-line text-[19px] leading-[1.2]">{{ $description }}</p>
+        <h2 class="text-[30px] font-medium uppercase leading-[1.05] md:text-[50px]">{{ $title }}</h2>
+        <p class="mt-[20px] whitespace-pre-line text-[16px] leading-[1.2] md:mt-[35px] md:text-[19px]">{{ $description }}</p>
     </div>
 
     <form class="mt-[40px] md:col-span-2 md:mt-0 md:pl-[20px]" action="{{ $action }}" method="POST">
@@ -15,30 +15,30 @@
 
         <div>
             <label class="sr-only" for="contact-form-name">Имя</label>
-            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[19px] outline-none placeholder:text-[#8F8F8F]" id="contact-form-name" name="name" type="text" placeholder="Имя">
+            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[16px] outline-none placeholder:text-[#8F8F8F] md:text-[19px]" id="contact-form-name" name="name" type="text" placeholder="Имя">
         </div>
 
         <div>
             <label class="sr-only" for="contact-form-contact">Телефон/Email</label>
-            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[19px] outline-none placeholder:text-[#8F8F8F]" id="contact-form-contact" name="contact" type="text" placeholder="Телефон/Email">
+            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[16px] outline-none placeholder:text-[#8F8F8F] md:text-[19px]" id="contact-form-contact" name="contact" type="text" placeholder="Телефон/Email">
         </div>
 
         <div>
             <label class="sr-only" for="contact-form-date">Дата события (если есть)</label>
-            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[19px] outline-none placeholder:text-[#8F8F8F]" id="contact-form-date" name="date" type="text" placeholder="Дата события (если есть)">
+            <input class="h-[55px] w-full border-t border-[#1f1e1d] bg-transparent text-[16px] outline-none placeholder:text-[#8F8F8F] md:text-[19px]" id="contact-form-date" name="date" type="text" placeholder="Дата события (если есть)">
         </div>
 
         <div>
             <label class="sr-only" for="contact-form-idea">Описание идеи</label>
-            <textarea class="block h-[55px] w-full resize-none border-t border-[#1f1e1d] bg-transparent pt-[16px] text-[19px] leading-[1.2] outline-none placeholder:text-[#8F8F8F]" id="contact-form-idea" name="idea" placeholder="Описание идеи"></textarea>
+            <textarea class="block h-[55px] w-full resize-none border-t border-[#1f1e1d] bg-transparent pt-[16px] text-[16px] leading-[1.2] outline-none placeholder:text-[#8F8F8F] md:text-[19px]" id="contact-form-idea" name="idea" placeholder="Описание идеи"></textarea>
         </div>
 
         <div class="border-y border-[#1f1e1d]">
-            <p class="pt-[16px] text-[19px]">Каким способом вы хотите получить обратную связь</p>
+            <p class="pt-[16px] text-[16px] md:text-[19px]">Каким способом вы хотите получить обратную связь</p>
 
             <div class="flex flex-col gap-[10px] pb-[16px] pt-[16px]">
                 @foreach (['whatsapp' => 'WhatsApp', 'telegram' => 'Telegram', 'email' => 'Email'] as $value => $label)
-                    <label class="flex cursor-pointer items-center gap-[10px] text-[19px]">
+                    <label class="flex cursor-pointer items-center gap-[10px] text-[16px] md:text-[19px]">
                         <input class="peer sr-only" name="feedback_method" type="radio" value="{{ $value }}" @checked($value === 'whatsapp')>
                         <span class="relative h-[24px] w-[24px] shrink-0 rounded-full border border-[#1f1e1d] after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:rounded-full after:bg-[#1f1e1d] after:transition-transform peer-checked:after:scale-100"></span>
                         <span>{{ $label }}</span>

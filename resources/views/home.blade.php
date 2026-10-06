@@ -187,16 +187,16 @@
         </section>
         </div>
 
-        <section class="mt-[120px] grid grid-cols-1 gap-y-[40px] border-t border-[#1f1e1d] pt-[14px] md:grid-cols-4 md:gap-0">
-            <div class="text-[19px] uppercase md:col-span-2">География</div>
+        <section class="mt-[40px] grid grid-cols-1 gap-y-[20px] border-t-0 pt-0 md:mt-[120px] md:grid-cols-4 md:gap-0 md:border-t md:pt-[14px]">
+            <div class="text-[30px] font-medium uppercase leading-[1.05] md:col-span-2 md:text-[19px] md:font-normal md:leading-normal">География</div>
 
-            <p class="text-[19px] leading-[1.2]">
+            <p class="text-[16px] leading-[1.2] md:text-[19px]">
                 Работаю по всему миру. Собираю<br class="hidden md:block">
                 команду под задачу — лучших<br class="hidden md:block">
                 специалистов отрасли.
             </p>
 
-            <div class="text-[19px] uppercase">
+            <div class="text-[16px] uppercase md:text-[19px]">
                 @foreach (['ОАЭ', 'Россия', 'Китай', 'Италия', 'Саудовская Аравия'] as $countryIndex => $country)
                     <div class="flex {{ $countryIndex === 0 ? 'h-[40px] items-start' : 'h-[55px] items-center' }} justify-between border-b border-[#1f1e1d]">
                         <span>{{ $country }}</span>
@@ -206,12 +206,12 @@
             </div>
         </section>
 
-        <picture class="mt-[120px] block">
+        <picture class="mt-[40px] block md:mt-[120px]">
             <source media="(max-width: 767px)" srcset="{{ asset('images/main-bottom-mob.webp') }}">
             <img class="block h-auto w-full" src="{{ asset('images/main-bottom.webp') }}" alt="Цветочные композиции в интерьере">
         </picture>
 
-        <div class="mb-[120px] mt-[115px]">
+        <div class="mb-[40px] mt-[40px] md:mb-[120px] md:mt-[115px]">
             <x-contact-form />
         </div>
     </main>
