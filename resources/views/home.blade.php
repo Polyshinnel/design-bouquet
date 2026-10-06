@@ -9,13 +9,13 @@
         <table class="mt-[10px] w-full border-collapse md:table-fixed">
             <tbody>
                 <tr>
-                    <td class="h-[55px] border-y border-r-0 border-[#1f1e1d] text-left align-middle text-[14px] uppercase md:border-r">
+                    <td class="h-[55px] border-y border-r-0 border-[#1f1e1d] text-left align-middle text-[14px] uppercase md:border-r md:text-[19px]">
                         <div class="relative">
                             БОЛЬШЕ ЧЕМ БУКЕТ
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 md:hidden" aria-hidden="true">•</span>
                         </div>
                     </td>
-                    <td class="hidden h-[55px] border-y border-[#1f1e1d] pl-[5px] text-left align-middle text-[14px] md:table-cell">
+                    <td class="hidden h-[55px] border-y border-[#1f1e1d] pl-[5px] text-left align-middle text-[14px] md:table-cell md:text-[19px]">
                         <div class="flex items-center justify-between gap-4">
                             <span>Флористика как архитектура</span>
                             <span aria-hidden="true">•</span>
@@ -23,13 +23,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="h-[55px] border-b border-r-0 border-[#1f1e1d] text-left align-middle text-[14px] md:border-r">
+                    <td class="h-[55px] border-b border-r-0 border-[#1f1e1d] text-left align-middle text-[14px] md:border-r md:text-[19px]">
                         <div class="relative">
                             Флористика и декор для событий и пространств
                             <span class="absolute right-0 top-1/2 -translate-y-1/2 md:hidden" aria-hidden="true">•</span>
                         </div>
                     </td>
-                    <td class="hidden h-[55px] border-b border-[#1f1e1d] pl-[5px] text-left align-middle text-[14px] md:table-cell">
+                    <td class="hidden h-[55px] border-b border-[#1f1e1d] pl-[5px] text-left align-middle text-[14px] md:table-cell md:text-[19px]">
                         <div class="flex items-center justify-between gap-4">
                             <span>Александра Лекомцева</span>
                             <span aria-hidden="true">•</span>
@@ -135,7 +135,8 @@
         </a>
         </div>
 
-        <table class="mt-[120px] h-[55px] w-full table-fixed border-y border-[#1f1e1d] border-collapse text-[19px] uppercase">
+        <div class="flex flex-col">
+        <table class="order-1 mt-[120px] hidden h-[55px] w-full table-fixed border-y border-[#1f1e1d] border-collapse text-[19px] uppercase md:table">
             <tbody>
                 <tr>
                     <td class="h-[55px] text-left align-middle">Внимание к деталям</td>
@@ -150,17 +151,41 @@
             </tbody>
         </table>
 
-        <section class="mt-[10px] grid grid-cols-1 gap-y-[40px] md:grid-cols-2 md:gap-0">
-            <h2 class="text-[50px] font-medium uppercase leading-[1.05]">Принципы</h2>
+        <table class="order-2 mt-[30px] w-full border-y border-[#1f1e1d] border-collapse text-[16px] uppercase md:hidden">
+            <tbody>
+                <tr>
+                    <td class="relative h-[55px] border-b border-[#1f1e1d] text-left align-middle">
+                        Внимание к деталям
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2" aria-hidden="true">•</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="relative h-[55px] border-b border-[#1f1e1d] text-left align-middle">
+                        Индивидуальный подход
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2" aria-hidden="true">•</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="relative h-[55px] text-left align-middle">
+                        Высокое качество исполнения
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2" aria-hidden="true">•</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="order-1 mt-[40px] grid grid-cols-1 gap-y-[30px] md:order-2 md:mt-[10px] md:grid-cols-2 md:gap-0">
+            <h2 class="text-[30px] font-medium uppercase leading-[1.05] md:text-[50px]">Принципы</h2>
 
             <div>
-                <p class="text-[19px] leading-[1.2]">
+                <p class="text-[16px] leading-[1.2] md:text-[19px]">
                     Каждый проект начинается с задачи,<br class="hidden md:block">
                     а не с шаблона. Я вслушиваюсь, уточняю,<br class="hidden md:block">
                     предлагаю — и только потом создаю.
                 </p>
             </div>
         </section>
+        </div>
 
         <section class="mt-[120px] grid grid-cols-1 gap-y-[40px] border-t border-[#1f1e1d] pt-[14px] md:grid-cols-4 md:gap-0">
             <div class="text-[19px] uppercase md:col-span-2">География</div>
