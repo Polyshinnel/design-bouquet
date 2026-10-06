@@ -1,31 +1,31 @@
-<header class="flex h-[105px] items-center justify-between border-b border-[#1f1e1d]">
+<header class="flex h-[75px] items-center justify-between border-b-0 border-[#1f1e1d] lg:h-[105px] lg:border-b">
     <a href="{{ route('home') }}" aria-label="На главную">
-        <img src="{{ asset('images/logo.svg') }}" alt="Design Bouquet" width="115" height="57">
+        <img class="h-auto w-[90px] lg:w-[115px]" src="{{ asset('images/logo.svg') }}" alt="Design Bouquet" width="115" height="57">
     </a>
 
     <nav aria-label="Основная навигация">
         <ul class="flex items-center gap-8 text-[19px] uppercase">
-            <li>
+            <li class="hidden lg:block">
                 <a class="relative inline-block after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="{{ route('home') }}">
                     Главная
                 </a>
             </li>
-            <li>
+            <li class="hidden lg:block">
                 <a class="relative inline-block after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="{{ route('services') }}">
                     Услуги
                 </a>
             </li>
-            <li>
+            <li class="hidden lg:block">
                 <a class="relative inline-block after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="{{ route('portfolio') }}">
                     Портфолио
                 </a>
             </li>
-            <li>
+            <li class="hidden lg:block">
                 <a class="relative inline-block after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="{{ route('about') }}">
                     Обо мне
                 </a>
             </li>
-            <li>
+            <li class="hidden lg:block">
                 <a class="relative inline-block after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="{{ route('contacts') }}">
                     Контакты
                 </a>
@@ -50,6 +50,9 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="block lg:hidden">
+                <img class="h-auto w-[64px] lg:w-[94px]" src="{{ asset('images/menu.svg') }}" alt="Меню" width="94" height="44">
             </li>
         </ul>
     </nav>
