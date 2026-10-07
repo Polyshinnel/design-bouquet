@@ -2,6 +2,10 @@
 
 @section('title', 'Александра Лекомцева — DESIGN.BOUQUET')
 
+@push('scripts')
+    @vite('resources/js/about.js')
+@endpush
+
 @section('content')
     <main>
         <section class="mt-[30px] grid grid-cols-1 md:mt-[130px] md:grid-cols-6">
