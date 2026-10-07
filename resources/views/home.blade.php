@@ -76,7 +76,7 @@
                     <p>За этим стоит опыт с 2013 года, обучение у чемпионов мира и Европы, и сотни проектов — от частных интерьеров до международных выставок.</p>
                 </div>
 
-                <a class="group mt-[15px] inline-flex gap-[5px] text-[19px] uppercase md:mt-[20px]" href="{{ route('contacts') }}">
+                <a class="group mt-[15px] inline-flex gap-[5px] text-[19px] uppercase md:mt-[20px]" href="https://wa.me/79652515252">
                     <span class="transition-transform duration-300 group-hover:-translate-x-1">[</span>
                     <span>Обсудить проект</span>
                     <span class="transition-transform duration-300 group-hover:translate-x-1">]</span>

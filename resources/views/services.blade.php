@@ -57,7 +57,7 @@
 
                             <p class="mt-[50px] text-[16px] leading-[1.2] md:text-[19px]">{{ $service['description'] }}</p>
 
-                            <a class="group mt-[25px] inline-flex w-fit gap-[5px] text-[16px] uppercase md:mt-[30px] md:text-[19px]" href="{{ route('contacts') }}">
+                            <a class="group mt-[25px] inline-flex w-fit gap-[5px] text-[16px] uppercase md:mt-[30px] md:text-[19px]" href="https://wa.me/79652515252">
                                 <span class="transition-transform duration-300 group-hover:-translate-x-1">[</span>
                                 <span>Обсудить проект</span>
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">]</span>
