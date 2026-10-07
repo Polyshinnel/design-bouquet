@@ -15,5 +15,9 @@
     },
     "optionalDependencies": {
         "@laravel/multiplex": "^0.4.1"
+    },
+    "dependencies": {
+        "@fancyapps/ui": "^6.1.15",
+        "swiper": "^14.3.0"
     }
 }
