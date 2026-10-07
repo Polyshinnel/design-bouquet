@@ -15,13 +15,13 @@
                 <a class="relative inline-block w-fit after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full" href="tel:+79652515252">+7 965 251 52 52</a>
             </div>
             <div class="mt-[45px] flex items-center justify-center gap-5 md:justify-start">
-                <a class="transition-opacity duration-300 hover:opacity-60" href="#" aria-label="Instagram">
+                <a class="transition-opacity duration-300 hover:opacity-60" href="https://www.instagram.com/design.bouquet/" aria-label="Instagram">
                     <img class="h-[32px] w-[32px] md:h-[24px] md:w-[24px]" src="{{ asset('images/instagram.svg') }}" alt="" width="24" height="24">
                 </a>
-                <a class="transition-opacity duration-300 hover:opacity-60" href="#" aria-label="Telegram">
+                <a class="transition-opacity duration-300 hover:opacity-60" href="https://t.me/+79652515252" aria-label="Telegram">
                     <img class="h-[32px] w-[32px] md:h-[24px] md:w-[24px]" src="{{ asset('images/telegram.svg') }}" alt="" width="24" height="24">
                 </a>
-                <a class="transition-opacity duration-300 hover:opacity-60" href="#" aria-label="WhatsApp">
+                <a class="transition-opacity duration-300 hover:opacity-60" href="https://wa.me/79652515252" aria-label="WhatsApp">
                     <img class="h-[32px] w-[32px] md:h-[24px] md:w-[24px]" src="{{ asset('images/whatsapp.svg') }}" alt="" width="24" height="24">
                 </a>
             </div>
