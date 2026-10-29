@@ -6,35 +6,36 @@
     @php
         $portfolioSections = [
             [
+                'title' => 'Рестораны',
+                'projects' => [
+                    ['image' => 'restaurants-1', 'title' => 'РЕСТОРАН RIZZ', 'location' => 'Россия', 'year' => '2026', 'url' => route('portfolio.rizz-restaurant')],
+                    ['image' => 'restaurants-2', 'title' => 'ПИВНОЙ РЕСТОРАН «ВЕРВЪ»', 'location' => 'Россия', 'year' => '2025', 'url' => route('portfolio.verb-restaurant')],
+                ],
+            ],
+            [
                 'title' => 'Озеленение пространств',
                 'projects' => [
-                    ['image' => 1, 'title' => 'Зелёный остров в офисе'],
-                    ['image' => 2, 'title' => 'Вертикальное озеленение интерьера'],
+                    ['image' => 'landscaping-1', 'title' => 'ORANGE GROUP', 'location' => 'ОАЭ', 'year' => '2026', 'url' => route('portfolio.orange-group')],
                 ],
             ],
             [
                 'title' => 'Торжества',
                 'projects' => [
-                    ['image' => 3, 'title' => 'Свадебный ужин в классическом зале'],
-                    ['image' => 4, 'title' => 'Цветочная композиция с арт-объектом'],
-                    ['image' => 5, 'title' => 'Новогоднее оформление пространства'],
-                    ['image' => 6, 'title' => 'Цветочная фотозона'],
+                    ['image' => 'celebrations-1', 'title' => 'СВАДЕБНЫЙ ПРОЕКТ ГУМ', 'location' => 'Россия', 'year' => '2026', 'url' => route('portfolio.gum-wedding')],
+                    ['image' => 'celebrations-2', 'title' => 'НОВЫЙ ГОД ФЕНИКСПРЕЗЕНТ', 'location' => 'Россия', 'year' => '2026', 'url' => route('portfolio.phoenix-new-year')],
                 ],
             ],
             [
                 'title' => 'Выставки и фестивали',
                 'projects' => [
-                    ['image' => 7, 'title' => 'Оформление выставочного стенда'],
-                    ['image' => 8, 'title' => 'Зелёная инсталляция в галерее'],
-                    ['image' => 9, 'title' => 'Природная арт-инсталляция'],
-                    ['image' => 10, 'title' => 'Цветочная инсталляция на фестивале'],
+                    ['image' => 'exhibitions-1', 'title' => 'SHANGHAI BIENNALE', 'location' => 'Шанхай, Китай', 'year' => '2025', 'url' => route('portfolio.shanghai-biennale')],
+                    ['image' => 'exhibitions-2', 'title' => 'ЛЭНД АРТ', 'location' => 'Россия', 'year' => '2025', 'url' => route('portfolio.land-art')],
                 ],
             ],
             [
                 'title' => 'Арт',
                 'projects' => [
-                    ['image' => 11, 'title' => 'Цветочный образ'],
-                    ['image' => 12, 'title' => 'Букет как арт-объект'],
+                    ['image' => 'art-1', 'title' => 'ЦВЕТОЧНЫЙ АРТ', 'location' => 'Россия', 'year' => '2026', 'url' => route('portfolio.floral-art')],
                 ],
             ],
         ];
@@ -51,6 +52,9 @@
                     <div class="grid grid-cols-1 gap-y-[30px] md:grid-cols-2 md:gap-x-[20px] md:gap-y-[50px]">
                         @foreach ($section['projects'] as $project)
                             <article>
+                                @if (isset($project['url']))
+                                    <a href="{{ $project['url'] }}" aria-label="Открыть проект {{ $project['title'] }}">
+                                @endif
                                 <img
                                     class="block h-auto w-full grayscale transition-[filter] duration-500 hover:grayscale-0 focus-visible:grayscale-0"
                                     src="{{ asset('images/portfolio/'.$project['image'].'.webp') }}"
@@ -60,9 +64,12 @@
                                 <h3 class="mt-[12px] text-[13px] uppercase leading-[1.1] md:mt-[20px] md:text-[19px]">
                                     {{ $project['title'] }}
                                 </h3>
+                                @if (isset($project['url']))
+                                    </a>
+                                @endif
                                 <div class="mt-[12px] border-b border-[#1f1e1d] md:mt-[20px]"></div>
-                                <p class="mt-[10px] text-[13px] uppercase md:mt-[15px] md:text-[19px]">Локация</p>
-                                <p class="mt-[5px] text-[13px] md:mt-[10px] md:text-[19px]">2026</p>
+                                <p class="mt-[10px] text-[13px] uppercase md:mt-[15px] md:text-[19px]">{{ $project['location'] }}</p>
+                                <p class="mt-[5px] text-[13px] md:mt-[10px] md:text-[19px]">{{ $project['year'] }}</p>
                             </article>
                         @endforeach
                     </div>

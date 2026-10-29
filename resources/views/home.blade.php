@@ -17,7 +17,7 @@
                     </td>
                     <td class="hidden h-[55px] border-y border-[#1f1e1d] pl-[5px] text-left align-middle text-[14px] md:table-cell md:text-[19px]">
                         <div class="flex items-center justify-between gap-4">
-                            <span>Флористика как архитектура</span>
+                            <span>ФЛОРИСТИКА КАК АРХИТЕКТУРА</span>
                             <span aria-hidden="true">•</span>
                         </div>
                     </td>
@@ -119,12 +119,29 @@
         </section>
 
         <section class="order-3 mt-[30px] grid grid-cols-2 gap-[10px] md:order-3 md:mt-[70px] md:grid-cols-4" aria-label="Избранные проекты">
+            @php($updatedFavoriteProjectImages = [
+                2 => '2-refresh.webp',
+                5 => '5-refresh.webp',
+                6 => '6-refresh.webp',
+                7 => '7-refresh.webp',
+            ])
+
             @foreach (range(1, 8) as $projectNumber)
-                <img
-                    class="block aspect-square h-auto w-full grayscale transition-[filter] duration-500 hover:grayscale-0"
-                    src="{{ asset("images/favorite-project/{$projectNumber}.webp") }}"
-                    alt="Избранный проект {{ $projectNumber }}"
-                >
+                @if (in_array($projectNumber, [1, 2, 3, 4, 5, 6, 7, 8], true))
+                    <a href="{{ route(match ($projectNumber) { 1 => 'portfolio.shanghai-biennale', 2 => 'portfolio.gum-wedding', 3 => 'portfolio.floral-art', 4 => 'portfolio.verb-restaurant', 5 => 'portfolio.land-art', 6 => 'portfolio.rizz-restaurant', 7 => 'portfolio.orange-group', 8 => 'portfolio.phoenix-new-year' }) }}" aria-label="Открыть проект {{ match ($projectNumber) { 1 => 'Shanghai Biennale', 2 => 'Свадебный проект ГУМ', 3 => 'Цветочный арт', 4 => 'Пивной ресторан Вервъ', 5 => 'Лэнд арт', 6 => 'RIZZ RESTAURANT', 7 => 'Orange Group', 8 => 'Новый год Феникспрезент' } }}">
+                        <img
+                            class="block aspect-square h-auto w-full grayscale transition-[filter] duration-500 hover:grayscale-0"
+                            src="{{ asset('images/favorite-project/' . ($updatedFavoriteProjectImages[$projectNumber] ?? "{$projectNumber}.webp")) }}"
+                            alt="Избранный проект {{ $projectNumber }}"
+                        >
+                    </a>
+                @else
+                    <img
+                        class="block aspect-square h-auto w-full grayscale transition-[filter] duration-500 hover:grayscale-0"
+                        src="{{ asset('images/favorite-project/' . ($updatedFavoriteProjectImages[$projectNumber] ?? "{$projectNumber}.webp")) }}"
+                        alt="Избранный проект {{ $projectNumber }}"
+                    >
+                @endif
             @endforeach
         </section>
 

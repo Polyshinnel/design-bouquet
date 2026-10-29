@@ -69,15 +69,25 @@
 
             <div class="swiper mt-[33px]" data-awards-slider>
                 <div class="swiper-wrapper">
-                    @foreach (range(1, 17) as $diplomaNumber)
+                    @foreach (range(1, 9) as $diplomaNumber)
                         <article class="swiper-slide">
-                            <a class="block" href="{{ asset('images/diploms/' . $diplomaNumber . '.webp') }}" data-fancybox="awards" data-caption="Диплом №{{ $diplomaNumber }}">
-                                <img class="aspect-[3/4] w-full bg-white object-contain grayscale transition-[filter] duration-500 hover:grayscale-0" src="{{ asset('images/diploms/' . $diplomaNumber . '.webp') }}" alt="Диплом №{{ $diplomaNumber }}" loading="lazy">
+                            <a class="block" href="{{ asset('images/diploms/vertical/' . $diplomaNumber . '.webp') }}" data-fancybox="awards" data-caption="Диплом №{{ $diplomaNumber }}">
+                                <img class="aspect-[3/4] w-full bg-white object-contain grayscale transition-[filter] duration-500 hover:grayscale-0" src="{{ asset('images/diploms/vertical/' . $diplomaNumber . '.webp') }}" alt="Диплом №{{ $diplomaNumber }}" loading="lazy">
                             </a>
-                            <div class="mt-[19px] min-h-[44px] text-[16px] leading-[1.35] md:text-[19px]">
-                                <p>Диплом №{{ $diplomaNumber }}</p>
-                                <p class="text-[#828282]">Награды и достижения</p>
-                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="my-[40px] border-t border-[#1f1e1d] md:my-[90px]" aria-hidden="true"></div>
+
+            <div class="swiper" data-awards-slider>
+                <div class="swiper-wrapper">
+                    @foreach (range(1, 9) as $diplomaNumber)
+                        <article class="swiper-slide">
+                            <a class="block" href="{{ asset('images/diploms/horizontal/' . $diplomaNumber . '.webp') }}" data-fancybox="awards" data-caption="Диплом №{{ $diplomaNumber }}">
+                                <img class="aspect-[4/3] w-full bg-white object-contain grayscale transition-[filter] duration-500 hover:grayscale-0" src="{{ asset('images/diploms/horizontal/' . $diplomaNumber . '.webp') }}" alt="Диплом №{{ $diplomaNumber }}" loading="lazy">
+                            </a>
                         </article>
                     @endforeach
                 </div>
@@ -88,7 +98,7 @@
             <div class="text-[30px] font-medium uppercase leading-[1.05]">География</div>
 
             <div class="text-[16px] uppercase">
-                @foreach (['ОАЭ', 'Россия', 'Китай', 'Италия', 'Саудовская Аравия'] as $countryIndex => $country)
+                @foreach (['Россия', 'ОАЭ', 'Китай', 'Италия', 'Саудовская Аравия'] as $countryIndex => $country)
                     <div class="flex {{ $countryIndex === 0 ? 'h-[40px] items-start' : 'h-[55px] items-center' }} justify-between border-b border-[#1f1e1d]">
                         <span>{{ $country }}</span>
                         <span aria-hidden="true">•</span>
@@ -98,13 +108,16 @@
         </section>
 
         <section class="mt-[130px] hidden overflow-x-auto md:block" aria-label="География работы">
-            <div class="grid h-[55px] min-w-[760px] grid-cols-6 items-center border-y border-[#1f1e1d] text-[14px] uppercase md:min-w-0 md:text-[19px]">
-                <div class="flex h-full items-center border-r border-[#1f1e1d] pr-[12px]">География</div>
-                <div class="text-center">ОАЭ</div>
-                <div class="text-center">Россия</div>
-                <div class="text-center">Китай</div>
-                <div class="text-center">Италия</div>
-                <div class="text-center">Саудовская Аравия</div>
+            <div class="flex h-[55px] min-w-[760px] items-center justify-between border-y border-[#1f1e1d] text-[14px] uppercase md:min-w-0 md:text-[19px] md:max-[1365px]:text-[14px]">
+                <span class="whitespace-nowrap">Россия</span>
+                <span class="font-bold" aria-hidden="true">•</span>
+                <span class="whitespace-nowrap">ОАЭ</span>
+                <span class="font-bold" aria-hidden="true">•</span>
+                <span class="whitespace-nowrap">Китай</span>
+                <span class="font-bold" aria-hidden="true">•</span>
+                <span class="whitespace-nowrap">Италия</span>
+                <span class="font-bold" aria-hidden="true">•</span>
+                <span class="whitespace-nowrap">Саудовская Аравия</span>
             </div>
         </section>
 

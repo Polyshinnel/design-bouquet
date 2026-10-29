@@ -1,4 +1,38 @@
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+
+Fancybox.bind('[data-fancybox]');
+
 const languageSelect = document.querySelector('[data-language-select]');
+
+const cookieNotice = document.querySelector('[data-cookie-notice]');
+
+if (cookieNotice) {
+    const cookieConsentKey = 'design-bouquet-cookie-consent';
+    const savedConsent = localStorage.getItem(cookieConsentKey);
+
+    if (savedConsent) {
+        const consentExpiresAt = Number(savedConsent);
+
+        if (consentExpiresAt > Date.now()) {
+            cookieNotice.hidden = true;
+        } else {
+            localStorage.removeItem(cookieConsentKey);
+        }
+    }
+
+    cookieNotice.querySelector('[data-cookie-accept]').addEventListener('click', () => {
+        const consentExpiresAt = new Date();
+        const currentDay = consentExpiresAt.getDate();
+
+        consentExpiresAt.setDate(1);
+        consentExpiresAt.setMonth(consentExpiresAt.getMonth() + 6);
+        consentExpiresAt.setDate(Math.min(currentDay, new Date(consentExpiresAt.getFullYear(), consentExpiresAt.getMonth() + 1, 0).getDate()));
+
+        localStorage.setItem(cookieConsentKey, String(consentExpiresAt.getTime()));
+        cookieNotice.hidden = true;
+    });
+}
 
 if (languageSelect) {
     const select = languageSelect.querySelector('#language');

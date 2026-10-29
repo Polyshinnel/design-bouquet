@@ -43,7 +43,7 @@
 
     <div class="mt-[40px] grid grid-cols-1 gap-[20px] text-center md:mt-[125px] md:grid-cols-[1fr_1fr_1.5fr_0.75fr] md:gap-10 md:text-left">
         <p class="col-span-1 md:col-span-2">Copyright © 2026 Design Bouquet — Все права защищены</p>
-        <a class="relative inline-block w-fit justify-self-center after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full md:justify-self-start" href="#">Политика конфиденциальности</a>
+        <a class="relative inline-block w-fit justify-self-center after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full md:justify-self-start" href="{{ route('privacy-policy') }}">Политика конфиденциальности</a>
         <a class="relative inline-block w-fit justify-self-center after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-[#1f1e1d] after:transition-all after:duration-300 hover:after:w-full md:justify-self-start" href="#">Документы</a>
     </div>
 </footer>

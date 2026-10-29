@@ -55,7 +55,7 @@
 
         <p class="mt-[16px] text-[16px] leading-[1.2] text-[#8F8F8F]">
             Нажимая на кнопку, вы даете согласие на
-            <a class="underline" href="#">обработку персональных данных</a>.
+            <a class="underline" href="{{ route('privacy-policy') }}">обработку персональных данных</a>.
         </p>
     </form>
 
